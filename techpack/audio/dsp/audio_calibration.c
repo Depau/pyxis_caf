@@ -593,7 +593,7 @@ struct miscdevice audio_cal_misc = {
 	.fops	= &audio_cal_fops,
 };
 
-int __init audio_cal_init(void)
+static int __init audio_cal_init(void)
 {
 	int i = 0;
 
@@ -609,7 +609,7 @@ int __init audio_cal_init(void)
 	return misc_register(&audio_cal_misc);
 }
 
-void audio_cal_exit(void)
+static void __exit audio_cal_exit(void)
 {
 	int i = 0;
 	struct list_head *ptr, *next;
@@ -627,7 +627,6 @@ void audio_cal_exit(void)
 			client_info_node = NULL;
 		}
 	}
-	misc_deregister(&audio_cal_misc);
 }
 
 subsys_initcall(audio_cal_init);
