@@ -66,7 +66,18 @@
 		qcom,elvss_dimming_check_enable;
 		qcom,disp-doze-backlight-threshold = <8>;
 		qcom,disp-fod-off-dimming-delay = <85>;
+		qcom,mdss-dsi-panel-dc-threshold = <610>;
+		qcom,bl-update-flag = "delay_until_first_frame";
+		qcom,mdss-dsi-t-clk-post = <15>;
+		qcom,mdss-dsi-t-clk-pre = <55>;
+		qcom,dsi-display-active;
+		qcom,panel-supply-entries = <50>;
+		qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
+		qcom,mdss-dsi-bl-min-level = <2>;
+		qcom,mdss-dsi-bl-max-level = <2047>;
 		qcom,mdss-dsi-panel-elvss-dimming-read-length = <1>;
+		qcom,platform-reset-gpio = < 0xffffffff 0x4b 0x00 >;
+		qcom,platform-te-gpio = < 0xffffffff 0x0a 0x00 >;
 		qcom,mdss-dsi-dispparam-elvss-dimming-offset-command = [39 01 00 00 00 00 02 B0 07];
 		qcom,mdss-dsi-dispparam-elvss-dimming-offset-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-dispparam-elvss-dimming-read-command = [06 01 00 01 00 00 01 B7];
