@@ -71,7 +71,6 @@
 		qcom,mdss-dsi-dispparam-elvss-dimming-offset-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-dispparam-elvss-dimming-read-command = [06 01 00 01 00 00 01 B7];
 		qcom,mdss-dsi-dispparam-elvss-dimming-read-command-state = "dsi_hs_mode";
-		qcom,bl-update-flag = "delay_until_first_frame";
 		qcom,mdss-dsi-display-timings {
 			timing@0{
 				qcom,mdss-dsi-panel-width = <1080>;
@@ -89,6 +88,7 @@
 				qcom,mdss-dsi-v-bottom-border = <0>;
 				qcom,mdss-dsi-panel-framerate = <60>;
 				qcom,mdss-dsi-panel-clockrate = <1100000000>;
+				qcom,mdss-dsi-panel-jitter = <0x8 0xa>;
 				qcom,mdss-dsi-on-command = [
 					05 01 00 00 0A 00 02 11 00
 					39 00 00 00 00 00 03 F0 5A 5A
@@ -181,7 +181,7 @@
 					39 00 00 00 00 00 03 F0 5A 5A
 					39 00 00 00 00 00 03 B7 01 43
 					39 01 00 00 01 00 03 F0 A5 A5];
-				qcom,mdss-dsi-dispparam-hbm-fod-on-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-dispparam-hbm-fod-on-command-state = "dsi_hs_mode";
 				qcom,mdss-dsi-dispparam-crc-srgb-on-command = [
 					/* CRC Enable + sRGB mode */
 					39 01 00 00 00 00 02 81 90
