@@ -147,12 +147,6 @@
 
 #define TSP_BUF_SIZE						PAGE_SIZE
 
-#define CONFIG_FTS_TOUCH_COUNT_DUMP
-
-#ifdef CONFIG_FTS_TOUCH_COUNT_DUMP
-#define TOUCH_COUNT_FILE_MAXSIZE 50
-#endif
-
 /**
  * Struct which contains information about the HW platform and set up
  */
@@ -167,9 +161,6 @@ struct fts_config_info {
 	u8 tp_hw_version;
 	const char *fts_cfg_name;
 	const char *fts_limit_name;
-#ifdef CONFIG_FTS_TOUCH_COUNT_DUMP
-		const char *clicknum_file_name;
-#endif
 };
 
 struct fts_hw_platform_data {
@@ -187,9 +178,6 @@ struct fts_hw_platform_data {
 #ifdef PHONE_KEY
 	size_t nbuttons;
 	int *key_code;
-#endif
-#ifdef CONFIG_FTS_TOUCH_COUNT_DUMP
-	bool dump_click_count;
 #endif
 	unsigned long keystates;
 };
@@ -293,11 +281,6 @@ struct fts_ts_info {
 	struct dentry *debugfs;
 #endif
 	int dbclick_count;
-#ifdef CONFIG_FTS_TOUCH_COUNT_DUMP
-	struct class *fts_tp_class;
-	struct device *fts_touch_dev;
-	char *current_clicknum_file;
-#endif
 	bool irq_status;
 	wait_queue_head_t 	wait_queue;
 	bool p_sensor_changed;
@@ -318,10 +301,4 @@ extern int input_unregister_notifier_client(struct notifier_block *nb);
 
 extern int fts_proc_init(void);
 extern int fts_proc_remove(void);
-
-#ifdef CONFIG_TOUCHSCREEN_XIAOMI_TOUCHFEATURE
-int fts_palm_sensor_cmd(int input);
-int fts_p_sensor_cmd(int input);
-bool fts_touchmode_edgefilter(unsigned int touch_id, int x, int y);
-#endif
 #endif

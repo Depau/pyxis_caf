@@ -218,11 +218,6 @@ struct fts_ts_data {
 #endif
 	struct class *fts_tp_class;
 	struct device *fts_touch_dev;
-#ifdef CONFIG_TOUCHSCREEN_XIAOMI_TOUCHFEATURE
-	u8 palm_sensor_switch;
-	bool palm_sensor_changed;
-	bool gamemode_enabled;
-#endif
 	bool is_tp_testing;
 	int aod_status;
 };
@@ -283,12 +278,6 @@ int fts_esdcheck_proc_busy(bool proc_debug);
 int fts_esdcheck_set_intr(bool intr);
 int fts_esdcheck_suspend(void);
 int fts_esdcheck_resume(void);
-#endif
-
-/* Production test */
-#if FTS_TEST_EN
-int fts_test_init(struct i2c_client *client);
-int fts_test_exit(struct i2c_client *client);
 #endif
 
 /* Point Report Check*/
