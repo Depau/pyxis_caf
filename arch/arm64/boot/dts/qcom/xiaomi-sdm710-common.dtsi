@@ -307,13 +307,6 @@
         status = "okay";
         qcom,mode = <1>;    /* Digital out */
         qcom,pull = <5>;    /* No pull */
-        /* qcom,vin-sel = <1>;*/ /* 1.8v */
-        /*
-           qcom,src-sel = <0>;
-           qcom,out-strength = <1>;
-           qcom,master-en = <1>;
-           qcom,invert = <1>;
-         */
     };
 };
 

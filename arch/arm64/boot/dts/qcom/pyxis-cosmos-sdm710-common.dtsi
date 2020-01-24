@@ -11,7 +11,7 @@
  * GNU General Public License for more details.
  */
 #include "xiaomi-sdm710-common.dtsi"
-#include "xiaomi-sde-display.dtsi"
+#include "pyxis-sde-display.dtsi"
 #include "pyxis-sdm710-camera-sensor.dtsi"
 
 &sdhc_2 {
@@ -197,16 +197,8 @@
 			regulator-min-microvolt = <3000000>;
 			qcom,init-voltage = <3000000>;
 			regulator-boot-on;
-			/*regulator-always-on;*/
 		};
 	};
-
-	xiaomi_touch {
-		compatible = "xiaomi-touch";
-		status = "ok";
-		touch,name = "xiaomi-touch";
-	};
-
 };
 
 &removed_region {
@@ -219,16 +211,6 @@
 };
 
 &dsi_ss_fhd_ea8076_cmd_f3b {
-	qcom,dsi-display-active;
-	qcom,panel-supply-entries = <&dsi_amoled_panel_pwr_supply>;
-	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
-	qcom,mdss-dsi-bl-min-level = <2>;
-	qcom,mdss-dsi-bl-max-level = <2047>;
-	qcom,platform-reset-gpio = <&tlmm 75 0>;
-	qcom,platform-te-gpio = <&tlmm 10 0>;
-};
-
-&dsi_ss_fhd_ea8076_cmd_f3m {
 	qcom,dsi-display-active;
 	qcom,panel-supply-entries = <&dsi_amoled_panel_pwr_supply>;
 	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_dcs";
@@ -396,10 +378,6 @@
 		0x03 0x250 /* TUNE5 */
 		0x00 0x23c /* CHG_CTRL2 */
 		0x22 0x210>; /* PWR_CTRL1 */
-};
-
-&mdss_dsi_phy0 {	
-       qcom,panel-allow-phy-poweroff;
 };
 
 &red_led {
@@ -690,4 +668,3 @@
 		};
 	};
 };
-
