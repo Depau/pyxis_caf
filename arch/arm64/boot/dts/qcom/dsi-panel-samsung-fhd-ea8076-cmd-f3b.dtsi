@@ -59,6 +59,7 @@
 		qcom,mdss-dsi-panel-fod-dimlayer-enabled;
 		qcom,mdss-dsi-on-command-tuning;
 		qcom,dispparam-enabled;
+		qcom,dsi-supported-dfps-list = <55 60>;
 		qcom,mdss-panel-on-dimming-delay = <200>;
 		/* IRQF_ONESHOT | IRQF_TRIGGER_FALLING */
 		/* trig-flags: falling-0x0002 rasing-0x0001 */
